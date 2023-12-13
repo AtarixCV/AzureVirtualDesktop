@@ -2,6 +2,15 @@
 #Based on this gist: https://gist.github.com/crutkas/6c2096eae387e544bd05cde246f23901
 $hasPackageManager = Get-AppPackage -name 'Microsoft.DesktopAppInstaller'
 if (!$hasPackageManager -or [version]$hasPackageManager.Version -lt [version]"1.10.0.0") {
+	"Installing Microsoft.UI.Xaml"
+	$downloadUrl = 'https://globalcdn.nuget.org/packages/microsoft.ui.xaml.2.7.3.nupkg'
+	###Invoke-WebRequest -method "Head" $downloadUrl | Select Headers -ExpandProperty Headers
+	Invoke-WebRequest $downloadUrl -OutFile $env:LOCALAPPDATA\temp\Microsoft.UI.Xaml.zip
+	#Unzip archive
+	Expand-Archive $env:LOCALAPPDATA\temp\Microsoft.UI.Xaml.zip
+
+	Add-AppxPackage -Path $env:LOCALAPPDATA\temp\Microsoft.UI.Xaml\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.7.appx
+
     "Installing winget Dependencies"
     Add-AppxPackage -Path 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
 
