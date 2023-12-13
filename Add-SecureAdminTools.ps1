@@ -47,12 +47,11 @@ $settingsJson | Out-File $settingsPath -Encoding utf8
 Write-Output "Installing Apps"
 $apps = @(
     @{name = "Microsoft.AzureCLI" }, 
-    @{name = "Azure VPN Client" }, 
-	@{name = "7zip.7zip" }
-	@{name = "9NP355QT2SQB"; source = "msstore" },
-	@{name = "Microsoft.WindowsTerminal"; source = "msstore" }, 
-	@{name = "Microsoft.Azure.StorageExplorer" }, 
-	@{name = "Google.Chrome" },
+    @{name = "7zip.7zip" }
+    @{name = "9NP355QT2SQB"; source = "msstore" }, ##Azure VPN
+    @{name = "Microsoft.WindowsTerminal"; source = "msstore" }, 
+    @{name = "Microsoft.Azure.StorageExplorer" }, 
+    @{name = "Google.Chrome" },
     @{name = "Microsoft.VisualStudioCode" }, 
     @{name = "Microsoft.PowerToys" }
 	
