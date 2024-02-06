@@ -51,7 +51,7 @@ $apps = @(
     @{name = "9NP355QT2SQB"; source = "msstore" }, ##Azure VPN
     @{name = "Microsoft.WindowsTerminal"; source = "msstore" }, 
     @{name = "Microsoft.Azure.StorageExplorer" }, 
-    @{name = "Google.Chrome" },
+    @{name = "Google.Chrome  -e" },
     @{name = "Microsoft.VisualStudioCode" }, 
     @{name = "Microsoft.PowerToys" }
 	
